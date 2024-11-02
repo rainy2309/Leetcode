@@ -1,4 +1,4 @@
-package JAVA;
+package JAVA.Leetcode;
 
 
 
@@ -44,21 +44,8 @@ public class Leetcode {
         
         return n;
     }
-    
-        public static int removeElement2(int[] nums, int val) {
-            int index = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] != val) {
-                    nums[index] = nums[i];
-                    index++;
-                }
-            }
-            return index;
-        }
 
-
-
-        public static void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
             int i = m - 1;
             int j = n - 1;
             int k = m + n - 1;
@@ -74,11 +61,22 @@ public class Leetcode {
                     j--;
                 }
             }
-        }
+    }
+    public static int removeElement2(int[] nums, int val) {
+        int k=0;
+       for (int i = 0; i < nums.length; i++) {
+            if(nums[i]!= val){
+                nums[k]=nums[i];
+                k++;
+            }
+       }
+        return k;
+
+    }
 
     public static void main(String[] args) {
-        int [] nums = {3,2,2,4,0,0,0};
+        int [] nums = {3,2,2,4,6,8,1};
         int [] nums2 = {2,5,6};
-        merge(nums, 4, nums2, 3);
+        System.out.println(removeElement2(nums, 2));
     }
 }
